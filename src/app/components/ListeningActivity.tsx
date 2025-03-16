@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Music } from 'lucide-react'
 import { getCurrentTrack, type LastFmRecentTrack } from '../lib/lastfm'
+import Image from 'next/image'
 
 export default function ListeningActivity() {
   const [currentTrack, setCurrentTrack] = useState<LastFmRecentTrack | null>(null)
@@ -12,7 +13,6 @@ export default function ListeningActivity() {
     const fetchData = async () => {
       try {
         const track = await getCurrentTrack()
-        console.log('Raw API Response:', track) // Debugging line
         setCurrentTrack(track || null)
       } catch (error) {
         console.error('Error fetching data:', error)
@@ -45,9 +45,8 @@ export default function ListeningActivity() {
     )
   }
 
-  const isPlaying = currentTrack?.['@attr']?.nowplaying === 'true'
-  const albumArt = currentTrack?.image?.find(img => img.size === 'extralarge')?.['#text']
   const artistName = currentTrack?.artist?.name ?? 'Unknown Artist'
+  const albumArt = currentTrack?.image?.find(img => img.size === 'extralarge')?.['#text']
 
   return (
     <div className="rounded-lg p-3 w-full max-w-[300px] mx-auto bg-stone-950">
@@ -60,12 +59,17 @@ export default function ListeningActivity() {
             </h3>
           </div>
 
-          {currentTrack.image?.find(img => img.size === 'extralarge')?.['#text'] && (
-            <img
-              src={currentTrack.image.find(img => img.size === 'extralarge')?.['#text']}
-              alt="Album art"
-              className="w-28 h-28 rounded-lg object-cover mx-auto"
-            />
+          {albumArt && (
+            <div className="relative w-28 h-28 rounded-lg overflow-hidden mx-auto">
+              <Image
+                src={albumArt}
+                alt="Album art"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover"
+                unoptimized
+              />
+            </div>
           )}
           
           <div className="text-center space-y-0.5"> 
