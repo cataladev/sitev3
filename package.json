@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "^10.4.21",
     "axios": "^1.8.2",
     "framer-motion": "^12.5.0",
