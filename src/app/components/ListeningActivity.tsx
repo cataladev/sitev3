@@ -49,7 +49,7 @@ export default function ListeningActivity() {
   const albumArt = currentTrack?.image?.find(img => img.size === 'extralarge')?.['#text']
 
   return (
-    <div className="rounded-lg p-3 w-full max-w-[200px] mx-auto border border-white">
+    <div className="rounded-lg p-3 w-full max-w-[220px] mx-auto border border-white">
       {currentTrack && (
         <div className="flex flex-col items-center gap-3">
           <div className="flex items-center gap-2 mb-1">
