@@ -16,7 +16,7 @@ export type LastFmRecentTrack = {
 
 export async function getCurrentTrack() {
   try {
-    const apiKey = process.env.NEXT_LASTFM_API_KEY
+    const apiKey = process.env.NEXT_PUBLIC_LASTFM_API_KEY
     const username = process.env.NEXT_PUBLIC_LASTFM_USERNAME
 
     const params = new URLSearchParams({

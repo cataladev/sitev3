@@ -29,7 +29,7 @@ export default function ListeningActivity() {
 
   if (loading) {
     return (
-      <div className="animate-pulse rounded-lg p-6 w-full max-w-md mx-auto bg-stone-950">
+      <div className="animate-pulse rounded-lg p-6 w-full max-w-md mx-auto border border-gray-600">
         <div className="flex items-center justify-center gap-2 mb-4">
           <div className="w-6 h-6 bg-gray-800 rounded-full" />
           <div className="h-5 bg-gray-800 rounded w-32" />
@@ -49,7 +49,7 @@ export default function ListeningActivity() {
   const albumArt = currentTrack?.image?.find(img => img.size === 'extralarge')?.['#text']
 
   return (
-    <div className="rounded-lg p-3 w-full max-w-[300px] mx-auto bg-stone-950">
+    <div className="rounded-lg p-3 w-full max-w-[200px] mx-auto border border-white">
       {currentTrack && (
         <div className="flex flex-col items-center gap-3">
           <div className="flex items-center gap-2 mb-1">
