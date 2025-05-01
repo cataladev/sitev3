@@ -1,4 +1,4 @@
-export default function work() {
+export default function career() {
     return (
       <div>
           skibidi

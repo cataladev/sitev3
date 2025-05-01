@@ -1,116 +1,68 @@
-'use client'
-
+import { FaJava, FaReact } from 'react-icons/fa'
 import {
-  FaJava,
-  FaReact,
-  FaRProject
-} from 'react-icons/fa';
-import {
-  SiC,
-  SiSharp,
-  SiCplusplus,
+  SiPython,
   SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiNumpy,
+  SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiSharp,
   SiHtml5,
   SiCss3,
-  SiTypescript,
-  SiPython,
-  SiAstro,
-  SiExpress,
-  SiTensorflow,
+  SiNextdotjs,
+  SiNodedotjs,
   SiTailwindcss,
-  SiBootstrap,
-  SiPandas,
-  SiKeras,
-  SiRedis,
-  SiFlask,
-  SiDjango,
+  SiTrpc,
+  SiPrisma,
   SiOpencv,
   SiGit,
-  SiPrisma,
-  SiJupyter,
-  SiMongodb,
   SiPostgresql,
-  SiFigma,
+  SiDocker,
   SiVercel,
-  SiVitest,
   SiSupabase,
-  SiAmazons3,
-  SiScikitlearn,
-  SiTrpc,
-  SiGo,
-  SiPytorch,
-  SiDocker, 
-  SiJira,
-} from 'react-icons/si';
-import { BsGithub } from 'react-icons/bs';
-import { GrMysql } from 'react-icons/gr';
-import { Icons } from './IconGroup';
+  SiUnity,
+} from 'react-icons/si'
+import { BsGithub } from 'react-icons/bs'
+import { Icons } from './IconGroup'
 
 export default function Tech() {
   return (
     <section className="max-w-screen-sm pt-4">
-      <div className='flex gap-10'>
-        {/* Languages & Packages Column */}
-        <div className='w-1/2 text-white flex flex-col gap-2'>
+      <div className="flex gap-10">
+        {/* Languages & Frameworks */}
+        <div className="w-1/2 text-white flex flex-col gap-4">
           <Icons title="languages">
-            <SiPython size={24} title="Python" />
-            <SiJavascript size={24} title="JavaScript" />
-            <SiTypescript size={24} title="TypeScript" />
-            <FaRProject size={24} title="R" />
-            <SiC size={24} title="C" />
-            <SiCplusplus size={24} title="C++" />
-            <SiSharp size={24} title="C#" />
-            <FaJava size={24} title="Java" />
-            <SiGo size={24} title="Go" />
-            <SiHtml5 size={24} title="HTML" />
-            <SiCss3 size={24} title="CSS" />
+            <SiPython size={24} title="Python" className="text-purple-500" />
+            <SiJavascript size={24} title="JavaScript" className="text-purple-500" />
+            <SiTypescript size={24} title="TypeScript" className="text-purple-500" />
+            <SiC size={24} title="C" className="text-purple-500" />
+            <SiCplusplus size={24} title="C++" className="text-purple-500" />
+            <SiSharp size={24} title="C#" className="text-purple-500" />
+            <FaJava size={24} title="Java" className="text-purple-500" />
+            <SiHtml5 size={24} title="HTML5" className="text-purple-500" />
+            <SiCss3 size={24} title="CSS3" className="text-purple-500" />
           </Icons>
 
-          <Icons title="packages">
-            <SiScikitlearn size={24} title="scikit-learn" />
-            <SiPytorch size={24} title="PyTorch" />
-            <SiTensorflow size={24} title="TensorFlow" />
-            <SiKeras size={24} title="Keras" />
-            <SiNumpy size={24} title="NumPy" />
-            <SiDjango size={24} title="Django" />
-            <SiFlask size={24} title="Flask" />
-            <SiOpencv size={24} title="OpenCV" />
-            <SiPandas size={24} title="Pandas" />
+          <Icons title="frameworks">
+            <FaReact size={24} title="React" className="text-purple-500" />
+            <SiNextdotjs size={24} title="Next.js" className="text-purple-500" />
+            <SiNodedotjs size={24} title="Node.js" className="text-purple-500" />
+            <SiTailwindcss size={24} title="Tailwind CSS" className="text-purple-500" />
+            <SiTrpc size={24} title="tRPC" className="text-purple-500" />
+            <SiPrisma size={24} title="Prisma" className="text-purple-500" />
+            <SiOpencv size={24} title="OpenCV" className="text-purple-500" />
+            <SiUnity size={24} title="Unity" className="text-purple-500" />
           </Icons>
         </div>
 
-        {/* Frameworks & Tools Column */}
-        <div className="w-1/2 text-white flex flex-col gap-2">
-          <Icons title="frameworks">
-            <FaReact size={24} title="React" />
-            <SiNextdotjs size={24} title="Next.js" />
-            <SiAstro size={24} title="Astro" />
-            <SiNodedotjs size={24} title="Node.js" />
-            <SiExpress size={24} title="Express.js" />
-            <SiTailwindcss size={24} title="Tailwind CSS" />
-            <SiTrpc size={24} title="tRPC" />
-            <SiBootstrap size={24} title="Bootstrap" />
-          </Icons>
-
-          <Icons title="tools">
-            <SiGit size={24} title="Git" />
-            <BsGithub size={24} title="GitHub" />
-            <SiJira size={24} title="Jira" />
-            <GrMysql size={24} title="MySQL" />
-            <SiPostgresql size={24} title="PostgreSQL" />
-            <SiPrisma size={24} title="Prisma" />
-            <SiDocker size={24} title="Docker" />
-            <SiRedis size={24} title="Redis" />
-            <SiSupabase size={24} title="Supabase" />
-            <SiAmazons3 size={24} title="Amazon S3" />
-            <SiJupyter size={24} title="Jupyter Notebook" />
-            <SiMongodb size={24} title="MongoDB" />
-            <SiFigma size={24} title="Figma" />
-            <SiVercel size={24} title="Vercel" />
-            <SiVitest size={24} title="Vitest" />
+        {/* Tools & Platforms */}
+        <div className="w-1/2 text-white flex flex-col gap-4">
+          <Icons title="tools & platforms">
+            <SiGit size={24} title="Git" className="text-purple-500" />
+            <BsGithub size={24} title="GitHub" className="text-purple-500" />
+            <SiPostgresql size={24} title="PostgreSQL" className="text-purple-500" />
+            <SiDocker size={24} title="Docker" className="text-purple-500" />
+            <SiVercel size={24} title="Vercel" className="text-purple-500" />
+            <SiSupabase size={24} title="Supabase" className="text-purple-500" />
           </Icons>
         </div>
       </div>

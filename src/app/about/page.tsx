@@ -17,22 +17,22 @@ export default function About() {
       <div className="flex flex-col gap-8"> 
         <p className="text-white text-md">
           I&apos;m a software developer specializing in modern web technologies and 
-          music applications. currently working with{" "}
+          music applications. currently working for the{" "}
           <AnimatedLink href="https://www.ucf.edu">
           University of Central Florida
           </AnimatedLink> while exploring innovative ways to blend audio engineering 
-          with web development. in my free time, i contribute to open-source projects, 
-          experiment with audio APIs, and play guitar.
+          with web development. in my free time, I mess with linux configs, 
+          experiment with audio APIs, and play video games.
         </p>
 
         <p className="text-white text-md">
-          my technical focus spans full-stack web development, real-time systems, 
-          and audio processing. i&apos;m passionate about creating seamless user 
+          My technical focus spans full-stack web development, real-time systems, 
+          and audio processing. i&apos;m passionate about creating user 
           experiences that bridge technical functionality with creative expression.
         </p>
 
         <p className="text-white text-md">
-          over the years, i&apos;ve worked with various technologies across the stack. 
+          Over the years, i&apos;ve worked with many different technologies. 
           here are some of my core tools:
         </p>
       </div>

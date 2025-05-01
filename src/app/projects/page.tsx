@@ -1,7 +1,12 @@
-export default function projects() {
-    return (
-      <div>
-          skibidi
-      </div>
-    )
-  }
+'use client'
+
+import Projects from "../components/projects"
+
+
+export default function ProjectsPage() {
+  return (
+    <main className="min-h-screen bg-black text-white">
+      <Projects />
+    </main>
+  )
+}
