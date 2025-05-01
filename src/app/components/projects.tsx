@@ -3,13 +3,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaMedal } from 'react-icons/fa6'
-import { CgAsterisk } from 'react-icons/cg'
 
 // Inline project data
 const projects = [
   {
     id: 1,
-    name: 'kmodo.org',
+    name: 'kmodo',
     desc: 'Full-stack hackathon management tool built with Next.js, Tailwind, tRPC, and Prisma.',
     imgSrc: '/images/kmodo.png',
     url: 'https://devpost.com/software/kmodo',
@@ -41,7 +40,7 @@ const projects = [
     imgSrc: '/images/spark-a-hack.png',
     url: 'https://devpost.com/software/spark-a-hack',
     variant: 'normal',
-    tags: ['React', 'Tailwind', 'Gemini API'],
+    tags: ['React', 'Tailwind'],
   },
   {
     id: 5,
@@ -50,7 +49,7 @@ const projects = [
     desc: 'A simplified, customized experience to assist users in finding hackathons that match their requirements and passions.',
     url: 'https://devpost.com/software/hack-tracker',
     variant: 'normal',
-    tags: ['React', 'Tailwind', 'Python'],
+    tags: ['React', 'Tailwind'],
   },
   {
     id: 6,
@@ -65,7 +64,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <main className="h-screen overflow-hidden bg-black text-white">
+    <main className="h-screen overflow-hidden bg-black text-purple-400">
       <h2 id="projects" className="text-3xl font-bold mb-6 text-center">
         Projects :D
       </h2>
@@ -74,11 +73,11 @@ export default function ProjectsPage() {
         {projects.map((proj) => (
           <li
             key={proj.id}
-            className="h-56 bg-gray-800 rounded-lg hover:shadow-lg transition-shadow overflow-hidden"
+            className="h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 m-2"
           >
             <Link href={proj.url} target="_blank" className="block w-full h-full">
-              <div className="flex h-full">
-                <div className="w-1/3 relative h-full p-2">
+              <div className="flex h-full ">
+                <div className="p-4 w-1/3 relative h-full m-2">  
                   <Image
                     src={proj.imgSrc}
                     alt={proj.name}
