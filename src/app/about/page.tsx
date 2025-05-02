@@ -10,8 +10,8 @@ export default function About() {
         description="Carlos Catala is a software developer with expertise in web development and music technology integration." 
       />
       
-      <h1 className="text-white font-bold text-3xl pb-6 text-center sm:text-middle">
-        about
+      <h1 className="text-purple-400 font-bold text-3xl pb-6 text-center sm:text-middle">
+        About Me
       </h1>
       
       <div className="flex flex-col gap-8"> 

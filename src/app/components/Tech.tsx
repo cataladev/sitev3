@@ -23,6 +23,28 @@ import {
 } from 'react-icons/si'
 import { BsGithub } from 'react-icons/bs'
 import { Icons } from './IconGroup'
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui/tooltip'
+
+function IconWithTooltip({
+  children,
+  label,
+}: {
+  children: React.ReactElement
+  label: string
+}) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
+      <TooltipContent>
+        <p>{label}</p>
+      </TooltipContent>
+    </Tooltip>
+  )
+}
 
 export default function Tech() {
   return (
@@ -31,38 +53,84 @@ export default function Tech() {
         {/* Languages & Frameworks */}
         <div className="w-1/2 text-white flex flex-col gap-4">
           <Icons title="languages">
-            <SiPython size={24} title="Python" className="text-purple-500" />
-            <SiJavascript size={24} title="JavaScript" className="text-purple-500" />
-            <SiTypescript size={24} title="TypeScript" className="text-purple-500" />
-            <SiC size={24} title="C" className="text-purple-500" />
-            <SiCplusplus size={24} title="C++" className="text-purple-500" />
-            <SiSharp size={24} title="C#" className="text-purple-500" />
-            <FaJava size={24} title="Java" className="text-purple-500" />
-            <SiHtml5 size={24} title="HTML5" className="text-purple-500" />
-            <SiCss3 size={24} title="CSS3" className="text-purple-500" />
+            <IconWithTooltip label="Python">
+              <SiPython size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="JavaScript">
+              <SiJavascript size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="TypeScript">
+              <SiTypescript size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="C">
+              <SiC size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="C++">
+              <SiCplusplus size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="C#">
+              <SiSharp size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Java">
+              <FaJava size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="HTML5">
+              <SiHtml5 size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="CSS3">
+              <SiCss3 size={24} className="text-purple-500" />
+            </IconWithTooltip>
           </Icons>
 
           <Icons title="frameworks">
-            <FaReact size={24} title="React" className="text-purple-500" />
-            <SiNextdotjs size={24} title="Next.js" className="text-purple-500" />
-            <SiNodedotjs size={24} title="Node.js" className="text-purple-500" />
-            <SiTailwindcss size={24} title="Tailwind CSS" className="text-purple-500" />
-            <SiTrpc size={24} title="tRPC" className="text-purple-500" />
-            <SiPrisma size={24} title="Prisma" className="text-purple-500" />
-            <SiOpencv size={24} title="OpenCV" className="text-purple-500" />
-            <SiUnity size={24} title="Unity" className="text-purple-500" />
+            <IconWithTooltip label="React">
+              <FaReact size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Next.js">
+              <SiNextdotjs size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Node.js">
+              <SiNodedotjs size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Tailwind CSS">
+              <SiTailwindcss size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="tRPC">
+              <SiTrpc size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Prisma">
+              <SiPrisma size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="OpenCV">
+              <SiOpencv size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Unity">
+              <SiUnity size={24} className="text-purple-500" />
+            </IconWithTooltip>
           </Icons>
         </div>
 
         {/* Tools & Platforms */}
         <div className="w-1/2 text-white flex flex-col gap-4">
           <Icons title="tools & platforms">
-            <SiGit size={24} title="Git" className="text-purple-500" />
-            <BsGithub size={24} title="GitHub" className="text-purple-500" />
-            <SiPostgresql size={24} title="PostgreSQL" className="text-purple-500" />
-            <SiDocker size={24} title="Docker" className="text-purple-500" />
-            <SiVercel size={24} title="Vercel" className="text-purple-500" />
-            <SiSupabase size={24} title="Supabase" className="text-purple-500" />
+            <IconWithTooltip label="Git">
+              <SiGit size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="GitHub">
+              <BsGithub size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="PostgreSQL">
+              <SiPostgresql size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Docker">
+              <SiDocker size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Vercel">
+              <SiVercel size={24} className="text-purple-500" />
+            </IconWithTooltip>
+            <IconWithTooltip label="Supabase">
+              <SiSupabase size={24} className="text-purple-500" />
+            </IconWithTooltip>
           </Icons>
         </div>
       </div>

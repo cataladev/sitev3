@@ -64,9 +64,9 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <main className="h-screen overflow-hidden bg-black text-purple-400">
+    <main className="h-screen overflow-hidden text-purple-400">
       <h2 id="projects" className="text-3xl font-bold mb-6 text-center">
-        Projects :D
+        Projects
       </h2>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto p-4">
