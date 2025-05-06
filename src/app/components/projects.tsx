@@ -9,64 +9,64 @@ const projects = [
   {
     id: 1,
     name: 'kmodo',
-    desc: 'Full-stack hackathon management tool built with Next.js, Tailwind, tRPC, and Prisma.',
+    desc: 'full-stack hackathon management tool built with next.js, tailwind, trpc, and prisma.',
     imgSrc: '/images/kmodo.png',
     url: 'https://devpost.com/software/kmodo',
     variant: 'projectlaunch',
-    tags: ['Next.js', 'Prisma', 'tRPC'],
+    tags: ['next.js', 'prisma', 'trpc'],
   },
   {
     id: 2,
-    name: 'Riffs',
-    desc: 'Web app converting hummed melodies into editable guitar tabs.',
+    name: 'riffs',
+    desc: 'web app converting hummed melodies into editable guitar tabs.',
     imgSrc: '/images/riffsicon.png',
     url: 'https://riffs-three.vercel.app',
     variant: 'bitcamp',
-    tags: ['Pitch Detection', 'Midi'],
+    tags: ['pitch detection', 'midi'],
   },
   {
     id: 3,
-    name: 'SightSync',
-    desc: 'Assistive desktop tool using real-time eye-tracking and voice commands.',
+    name: 'sightsync',
+    desc: 'assistive desktop tool using real-time eye-tracking and voice commands.',
     imgSrc: '/images/SightSync.png',
     url: 'https://devpost.com/software/sightsync-iztcrl',
     variant: 'normal',
-    tags: ['OpenCV', 'Mediapipe'],
+    tags: ['opencv', 'mediapipe'],
   },
   {
     id: 4,
-    name: 'Spark-A-Hack',
-    desc: 'Uses AI to suggest tailored project ideas to hackathon participants based on their interests, skills, and challenges they want to tackle.',
+    name: 'spark-a-hack',
+    desc: 'uses ai to suggest tailored project ideas to hackathon participants based on their interests, skills, and challenges they want to tackle.',
     imgSrc: '/images/spark-a-hack.png',
     url: 'https://devpost.com/software/spark-a-hack',
     variant: 'normal',
-    tags: ['React', 'Tailwind'],
+    tags: ['react', 'tailwind'],
   },
   {
     id: 5,
-    name: 'Hack Tracker',
+    name: 'hack tracker',
     imgSrc: '/images/hack-tracker.png',
-    desc: 'A simplified, customized experience to assist users in finding hackathons that match their requirements and passions.',
+    desc: 'a simplified, customized experience to assist users in finding hackathons that match their requirements and passions.',
     url: 'https://devpost.com/software/hack-tracker',
     variant: 'normal',
-    tags: ['React', 'Tailwind'],
+    tags: ['react', 'tailwind'],
   },
   {
     id: 6,
-    name: 'Night of Knights',
+    name: 'night of knights',
     imgSrc: '/images/night-of-knights.png',
-    desc: 'Night of Knights was my first ever large-scale project, it was done as a capstone project senior year of high school.',
+    desc: 'night of knights was my first ever large-scale project, it was done as a capstone project senior year of high school.',
     url: 'https://play.unity.com/en/games/27ee33fa-e1e3-4178-8acf-9e1f37546fd0/night-of-knights',
     variant: 'normal',
-    tags: ['Unity', 'C#', 'Git'],
+    tags: ['unity', 'c#', 'git'],
   },
 ]
 
 export default function ProjectsPage() {
   return (
     <main className="h-screen overflow-hidden text-purple-400">
-      <h2 id="projects" className="text-3xl font-bold mb-6 text-center">
-        Projects
+      <h2 id="projects" className="text-3xl font-bold mb-6 text-center lowercase">
+        projects
       </h2>
 
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto p-4">
@@ -76,8 +76,8 @@ export default function ProjectsPage() {
             className="h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 m-2"
           >
             <Link href={proj.url} target="_blank" className="block w-full h-full">
-              <div className="flex h-full ">
-                <div className="p-4 w-1/3 relative h-full m-2">  
+              <div className="flex flex-col sm:flex-row h-full">
+                <div className="p-4 w-full sm:w-1/3 relative h-32 sm:h-full m-2">
                   <Image
                     src={proj.imgSrc}
                     alt={proj.name}
@@ -85,30 +85,30 @@ export default function ProjectsPage() {
                     className="object-contain"
                   />
                 </div>
-                <div className="w-2/3 p-4 flex flex-col justify-between">
+                <div className="w-full sm:w-2/3 p-4 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between">
-                      <h3 className="text-xl font-bold text-white">{proj.name}</h3>
+                      <h3 className="text-xl font-bold text-white lowercase">{proj.name}</h3>
                       {proj.variant === 'bitcamp' && (
-                        <span className="flex items-center text-yellow-400 font-bold">
-                          <FaMedal className="mr-1" title="Bitcamp Winner" />
-                          Winner
+                        <span className="flex items-center text-yellow-400 font-bold lowercase">
+                          <FaMedal className="mr-1" title="bitcamp winner" />
+                          winner
                         </span>
                       )}
                       {proj.variant === 'projectlaunch' && (
-                        <span className="flex items-center text-green-400 font-bold">
-                          <FaMedal className="mr-1" />Winner
+                        <span className="flex items-center text-green-400 font-bold lowercase">
+                          <FaMedal className="mr-1" />winner
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 text-gray-300 text-sm">{proj.desc}</p>
+                    <p className="mt-2 text-gray-300 text-sm lowercase">{proj.desc}</p>
                   </div>
                   {proj.tags && (
                     <ul className="mt-4 flex flex-wrap gap-2">
                       {proj.tags.map((tag) => (
                         <li
                           key={tag}
-                          className="bg-gray-700 text-white text-xs px-2 py-1 rounded"
+                          className="bg-gray-700 text-white text-xs px-2 py-1 rounded lowercase"
                         >
                           {tag}
                         </li>

@@ -1,79 +1,80 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { Album as AlbumIcon } from 'lucide-react'
-import Image from 'next/image'
-import {
-  getTopAlbums,
-  type LastFmTopAlbum
-} from '../lib/lastfm'
+import { useEffect, useState } from "react";
+import { Album as AlbumIcon } from "lucide-react";
+import Image from "next/image";
+import { getTopAlbums, type LastFmTopAlbum } from "../lib/lastfm";
 
 export default function Top3() {
-  const [albums, setAlbums]   = useState<LastFmTopAlbum[]>([])
-  const [loading, setLoading] = useState(true)
+  const [albums, setAlbums] = useState<LastFmTopAlbum[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
       try {
-        const top = await getTopAlbums(3)
-        setAlbums(top)
+        const top = await getTopAlbums(3);
+        setAlbums(top);
       } catch (e) {
-        console.error(e)
+        console.error(e);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    load()
-  }, [])
+    load();
+  }, []);
 
   if (loading) {
     return (
-      <div className="animate-pulse rounded-lg p-6 w-full max-w-md mx-auto border border-gray-600">
+      <div className="mx-auto max-w-md m-4 p-6 border border-gray-600 rounded-lg animate-pulse">
         {Array.from({ length: 3 }).map((_, i) => (
-          <div key={i} className="h-4 bg-gray-800 rounded my-2" />
+          <div key={i} className="h-4 bg-gray-800 rounded my-2 w-3/4" />
         ))}
       </div>
-    )
+    );
   }
 
   return (
-    <div className="m-4 rounded-lg p-3 w-full max-w-md mx-auto border border-white">
-      <div className="flex items-center gap-2 mb-3">
+    <div className="mx-auto max-w-md m-4 p-6 border border-white rounded-lg bg-transparent">
+      <div className="flex items-center gap-2 mb-4">
         <AlbumIcon className="w-5 h-5 text-purple-500" />
-        <h3 className="font-semibold text-base">Top 3 Albums</h3>
+        <h3 className="text-lg font-semibold">Top 3 Albums</h3>
       </div>
-      <ul className="space-y-4">
+      <ul className="space-y-6">
         {albums.map((album, idx) => {
-          const img = album.image.find(img => img.size === 'medium')?.['#text']
+          const img = album.image.find((img) => img.size === "medium")?.["#text"];
           return (
             <li
               key={`${album.name}-${album.artist.name}`}
-              className="flex items-center gap-3"
+              className="flex items-center gap-4"
             >
-              {img ? (
-                <Image
-                  src={img}
-                  alt={album.name}
-                  width={40}
-                  height={40}
-                  className="rounded"
-                  unoptimized
-                />
-              ) : (
-                <div className="w-10 h-10 bg-gray-700 rounded" />
-              )}
-              <div>
-                <p className="font-medium">
+              {/* fixed-size cover container */}
+              <div className="w-12 h-12 flex-shrink-0">
+                {img ? (
+                  <Image
+                    src={img}
+                    alt={album.name}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover rounded"
+                    unoptimized
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-700 rounded" />
+                )}
+              </div>
+
+              <div className="flex flex-col text-left">
+                <span className="font-medium text-base">
                   {idx + 1}. {album.name}
-                </p>
-                <p className="text-gray-400 text-xs">
+                </span>
+                <span className="text-gray-400 text-sm">
                   by {album.artist.name} • {album.playcount} plays
-                </p>
+                </span>
               </div>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
+  );
 }

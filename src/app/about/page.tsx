@@ -1,6 +1,7 @@
 import AnimatedLink from "../components/AnimatedLink";
 import Metadata from "../components/Metadata";
 import Tech from "../components/Tech";
+import FunFacts from "../components/FunFacts";
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
         description="Carlos Catala is a software developer with expertise in web development and music technology integration." 
       />
       
-      <h1 className="text-purple-400 font-bold text-3xl pb-6 text-center sm:text-middle">
+      <h1 className="text-purple-500 font-bold text-3xl pb-6 text-center sm:text-middle">
         About Me
       </h1>
       
@@ -38,6 +39,12 @@ export default function About() {
       </div>
 
       <Tech />
+      <div>
+        <p className="text-white text-center pt-8">
+          some fun facts: 
+        </p>
+      </div>
+      <FunFacts />
     </section>
   )
 }
