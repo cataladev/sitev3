@@ -15,90 +15,90 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    title: "Software Engineering Intern",
-    company: "University of Central Florida",
+    title: "software engineering intern",
+    company: "university of central florida",
     companyLink: "https://www.ucf.edu",
-    timeframe: "Mar 2025 - Present",
-    location: "Orlando, FL (On-site)",
+    timeframe: "mar 2025 - present",
+    location: "orlando, fl (on-site)",
     bulletPoints: [
-      "Developed a web-based tool to allow for student success coaches to track student progress and engagement.",
-      "Implemented a custom API to integrate with existing systems, improving data retrieval speed by 30%.",
+      "developed a web-based tool to allow for student success coaches to track student progress and engagement.",
+      "implemented a custom api to integrate with existing systems, improving data retrieval speed by 30%.",
     ],
   },
   {
-    title: "Founding Member",
+    title: "founding member",
     company: "kmodo",
     companyLink: "https://kmodo.org",
-    timeframe: "Jan 2025 - Present",
-    location: "Orlando, FL (Hybrid)",
+    timeframe: "jan 2025 - present",
+    location: "orlando, fl (hybrid)",
     bulletPoints: [
-      "Self-hosted infrastructure on a Linux VPS with CI/CD script for reliability and extensibility.",
-      "Built responsive full-stack hackathon management tools using Next.js, tRPC, and PostgreSQL.",
+      "self-hosted infrastructure on a linux vps with ci/cd script for reliability and extensibility.",
+      "built responsive full-stack hackathon management tools using next.js, trpc, and postgresql.",
     ],
   },
   {
-    title: "Hackathon Organizer",
-    company: "Knight Hacks",
+    title: "hackathon organizer",
+    company: "knight hacks",
     companyLink: "https://knighthacks.com",
-    timeframe: "Dec 2024 - Present",
-    location: "Orlando, FL",
+    timeframe: "dec 2024 - present",
+    location: "orlando, fl",
     bulletPoints: [
-      "Led planning and execution of Knight Hacks, coordinating logistics, sponsorship outreach, and student engagement.",
-      "Developed custom event platform features with Next.js and tRPC to streamline check-in and scheduling.",
+      "led planning and execution of knight hacks, coordinating logistics, sponsorship outreach, and student engagement.",
+      "developed custom event platform features with next.js and trpc to streamline check-in and scheduling.",
     ],
   },
   {
-    title: "Possibilities Summit Participant",
-    company: "Goldman Sachs",
+    title: "possibilities summit participant",
+    company: "goldman sachs",
     companyLink: "https://www.goldmansachs.com",
-    timeframe: "Jan 2025 - Apr 2025",
-    location: "Remote",
+    timeframe: "jan 2025 - apr 2025",
+    location: "remote",
     bulletPoints: [
-      "Expanded connections with professionals, mentors, and peers for professional growth.",
-      "Gained insights into recruitment best practices and enhanced technical proficiency in Excel and financial markets.",
+      "expanded connections with professionals, mentors, and peers for professional growth.",
+      "gained insights into recruitment best practices and enhanced technical proficiency in excel and financial markets.",
     ],
   },
   {
-    title: "Freshman Discovery Day Fellow",
-    company: "Susquehanna International Group",
+    title: "freshman discovery day fellow",
+    company: "susquehanna international group",
     companyLink: "https://sig.com",
-    timeframe: "Feb 2025",
-    location: "Remote",
+    timeframe: "feb 2025",
+    location: "remote",
     bulletPoints: [
-      "Attended virtual sessions on SIG's philosophy, culture, and global market role.",
-      "Explored applications of game theory and decision science in trading strategies.",
+      "attended virtual sessions on sig's philosophy, culture, and global market role.",
+      "explored applications of game theory and decision science in trading strategies.",
     ],
   },
   {
-    title: "Software Engineering Intern",
-    company: "Crowning Games",
-    timeframe: "Jun 2024 - Aug 2024",
-    location: "Dallas, TX (Remote)",
+    title: "software engineering intern",
+    company: "crowning games",
+    timeframe: "jun 2024 - aug 2024",
+    location: "dallas, tx (remote)",
     bulletPoints: [
-      "Launched NPCs using GDScript, enhancing gameplay and receiving positive feedback from 75 testers.",
-      "Led SCRUM implementation, achieving 90% on-time deliveries and 35% productivity gains.",
-      "Optimized game performance, reducing load times by 30% and improving render smoothness.",
+      "launched npcs using gdscript, enhancing gameplay and receiving positive feedback from 75 testers.",
+      "led scrum implementation, achieving 90% on-time deliveries and 35% productivity gains.",
+      "optimized game performance, reducing load times by 30% and improving render smoothness.",
     ],
   },
   {
-    title: "Software Engineering Intern",
-    company: "Miami EdTech",
-    timeframe: "Jun 2023 - Aug 2023",
-    location: "Miami, FL (Hybrid)",
+    title: "software engineering intern",
+    company: "miami edtech",
+    timeframe: "jun 2023 - aug 2023",
+    location: "miami, fl (hybrid)",
     bulletPoints: [
-      "Enhanced Python AI system for facial/object recognition, improving accuracy by 30% and reducing processing time by 15%.",
-      "Led a 4-intern team researching STEM kit integration in under-served schools, informing outreach for 500+ students.",
+      "enhanced python ai system for facial/object recognition, improving accuracy by 30% and reducing processing time by 15%.",
+      "led a 4-intern team researching stem kit integration in under-served schools, informing outreach for 500+ students.",
     ],
   },
   {
-    title: "Software Engineering Intern",
-    company: "Avatar Buddy, LLC",
-    timeframe: "Jun 2022 - Aug 2022",
-    location: "Remote",
+    title: "software engineering intern",
+    company: "avatar buddy, llc",
+    timeframe: "jun 2022 - aug 2022",
+    location: "remote",
     bulletPoints: [
-      "Developed unit tests for chatbot’s multilingual & emotional recognition, increasing accuracy by 25% and engagement by 15%.",
-      "Implemented bilingual detection and response features, boosting user satisfaction by 15%.",
-      "Optimized backend API response times for efficient request handling.",
+      "developed unit tests for chatbot's multilingual & emotional recognition, increasing accuracy by 25% and engagement by 15%.",
+      "implemented bilingual detection and response features, boosting user satisfaction by 15%.",
+      "optimized backend api response times for efficient request handling.",
     ],
   },
 ];
@@ -106,34 +106,24 @@ const experiences: Experience[] = [
 export default function Career() {
   return (
     <section id="career" className="max-w-screen-md mx-auto p-4 mb-8">
-      <h2 className="text-3xl font-bold text-purple-400 mb-6 text-center">
-        Career Experience
-      </h2>
+      <h2 className="text-3xl font-bold text-purple-400 mb-6 text-center lowercase">career experience</h2>
       <ul className="space-y-8">
         {experiences.map((exp) => (
           <li key={`${exp.title}-${exp.company}`} className="flex gap-4">
-            <Briefcase className="w-6 h-6 text-purple-500 mt-1" />
+            <Briefcase className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
             <div>
               <div className="flex items-baseline gap-2 flex-wrap">
-                <h3 className="text-xl font-semibold text-white">
-                  {exp.title}
-                </h3>
-                <span className="text-gray-400 text-sm">
+                <h3 className="text-xl font-semibold text-white lowercase">{exp.title}</h3>
+                <span className="text-gray-400 text-sm lowercase">
                   @ {exp.companyLink ? (
-                    <AnimatedLink href={exp.companyLink}>
-                      {exp.company}
-                    </AnimatedLink>
-                  ) : (
-                    exp.company
-                  )}
+                    <AnimatedLink href={exp.companyLink}>{exp.company}</AnimatedLink>
+                  ) : (exp.company)}
                 </span>
               </div>
-              <p className="text-gray-400 text-sm mb-2">
-                {exp.timeframe} • {exp.location}
-              </p>
+              <p className="text-gray-400 text-sm mb-2 lowercase">{exp.timeframe} • {exp.location}</p>
               <ul className="list-disc list-inside space-y-1 text-white">
                 {exp.bulletPoints.map((point, i) => (
-                  <li key={i}>{point}</li>
+                  <li key={i} className="lowercase">{point}</li>
                 ))}
               </ul>
             </div>

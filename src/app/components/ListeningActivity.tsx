@@ -15,7 +15,7 @@ export default function ListeningActivity() {
         const track = await getCurrentTrack()
         setCurrentTrack(track || null)
       } catch (error) {
-        console.error('Error fetching data:', error)
+        console.error('error fetching data:', error)
         setCurrentTrack(null)
       } finally {
         setLoading(false)
@@ -45,7 +45,7 @@ export default function ListeningActivity() {
     )
   }
 
-  const artistName = currentTrack?.artist?.name ?? 'Unknown Artist'
+  const artistName = currentTrack?.artist?.name ?? 'unknown artist'
   const albumArt = currentTrack?.image?.find(img => img.size === 'extralarge')?.['#text']
 
   return (
@@ -54,29 +54,20 @@ export default function ListeningActivity() {
         <div className="flex flex-col items-center gap-3">
           <div className="flex items-center gap-2 mb-1">
             <Music className="w-5 h-5 text-purple-500" />
-            <h3 className="font-semibold text-base"> 
-              {currentTrack['@attr']?.nowplaying ? 'Now listening to' : 'Most recently Played'}
+            <h3 className="font-semibold text-base lowercase"> 
+              {currentTrack['@attr']?.nowplaying ? 'now listening to' : 'most recently played'}
             </h3>
           </div>
 
           {albumArt && (
             <div className="relative w-28 h-28 rounded-lg overflow-hidden mx-auto">
-              <Image
-                src={albumArt}
-                alt="Album art"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover"
-                unoptimized
-              />
+              <Image src={albumArt} alt="album art" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" unoptimized />
             </div>
           )}
           
           <div className="text-center space-y-0.5"> 
-            <p className="font-medium text-lg">{currentTrack.name}</p> 
-            <p className="text-gray-400 text-xs"> 
-              {artistName}
-            </p>
+            <p className="font-medium text-lg lowercase">{currentTrack.name}</p> 
+            <p className="text-gray-400 text-xs lowercase">{artistName}</p>
           </div>
         </div>
       )}

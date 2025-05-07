@@ -37,39 +37,24 @@ export default function Top3() {
     <div className="mx-auto max-w-md m-4 p-6 border border-white rounded-lg bg-transparent">
       <div className="flex items-center gap-2 mb-4">
         <AlbumIcon className="w-5 h-5 text-purple-500" />
-        <h3 className="text-lg font-semibold">Top 3 Albums</h3>
+        <h3 className="text-lg font-semibold lowercase">top 3 albums</h3>
       </div>
       <ul className="space-y-6">
         {albums.map((album, idx) => {
           const img = album.image.find((img) => img.size === "medium")?.["#text"];
           return (
-            <li
-              key={`${album.name}-${album.artist.name}`}
-              className="flex items-center gap-4"
-            >
-              {/* fixed-size cover container */}
+            <li key={`${album.name}-${album.artist.name}`} className="flex items-center gap-4">
               <div className="w-12 h-12 flex-shrink-0">
                 {img ? (
-                  <Image
-                    src={img}
-                    alt={album.name}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-cover rounded"
-                    unoptimized
-                  />
+                  <Image src={img} alt={album.name} width={48} height={48} className="w-full h-full object-cover rounded" unoptimized />
                 ) : (
                   <div className="w-full h-full bg-gray-700 rounded" />
                 )}
               </div>
 
               <div className="flex flex-col text-left">
-                <span className="font-medium text-base">
-                  {idx + 1}. {album.name}
-                </span>
-                <span className="text-gray-400 text-sm">
-                  by {album.artist.name} • {album.playcount} plays
-                </span>
+                <span className="font-medium text-base lowercase">{idx + 1}. {album.name}</span>
+                <span className="text-gray-400 text-sm lowercase">by {album.artist.name} • {album.playcount} plays</span>
               </div>
             </li>
           );
