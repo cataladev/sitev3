@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import { Briefcase } from "lucide-react";
 import AnimatedLink from "../components/AnimatedLink";
 
@@ -105,23 +102,23 @@ const experiences: Experience[] = [
 
 export default function Career() {
   return (
-    <section id="career" className="max-w-screen-md mx-auto p-4 mb-8">
-      <h2 className="text-3xl font-bold text-purple-400 mb-6 text-center lowercase">career experience</h2>
-      <ul className="space-y-8">
+    <section id="career" className="max-w-screen-md mx-auto p-2 sm:p-4 mb-4">
+      <h2 className="text-2xl sm:text-3xl font-bold text-purple-400 mb-3 sm:mb-4 text-center lowercase animate-fade-in">career experience</h2>
+      <ul className="space-y-4 sm:space-y-6 animate-fade-in">
         {experiences.map((exp) => (
-          <li key={`${exp.title}-${exp.company}`} className="flex gap-4">
-            <Briefcase className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0" />
+          <li key={`${exp.title}-${exp.company}`} className="flex gap-2 sm:gap-4">
+            <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-purple-500 mt-1 flex-shrink-0" />
             <div>
-              <div className="flex items-baseline gap-2 flex-wrap">
-                <h3 className="text-xl font-semibold text-white lowercase">{exp.title}</h3>
-                <span className="text-gray-400 text-sm lowercase">
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-2 flex-wrap">
+                <h3 className="text-lg sm:text-xl font-semibold text-white lowercase">{exp.title}</h3>
+                <span className="text-gray-400 text-xs sm:text-sm lowercase">
                   @ {exp.companyLink ? (
                     <AnimatedLink href={exp.companyLink}>{exp.company}</AnimatedLink>
                   ) : (exp.company)}
                 </span>
               </div>
-              <p className="text-gray-400 text-sm mb-2 lowercase">{exp.timeframe} • {exp.location}</p>
-              <ul className="list-disc list-inside space-y-1 text-white">
+              <p className="text-gray-400 text-xs sm:text-sm mb-1 sm:mb-2 lowercase">{exp.timeframe} • {exp.location}</p>
+              <ul className="list-disc list-inside space-y-0.5 sm:space-y-1 text-white text-sm sm:text-base">
                 {exp.bulletPoints.map((point, i) => (
                   <li key={i} className="lowercase">{point}</li>
                 ))}

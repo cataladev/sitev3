@@ -16,7 +16,7 @@ const generateNoteStyle = (): NoteStyle => ({
   left: `${Math.random() * 100}%`,
   fontSize: `${12 + Math.random() * 24}px`,
   animationDelay: `${Math.random() * 5}s`,
-  animationDuration: `${5 + Math.random() * 10}s`,
+  animationDuration: `${5 + Math.random() * 25}s`,
 });
 
 const Notes = () => {
@@ -48,11 +48,31 @@ const Notes = () => {
 };
 
 export default function FallingNotesBackground({ children }: { children: ReactNode }) {
+  const [showNotes, setShowNotes] = React.useState(true);
+
+  React.useEffect(() => {
+    const checkScreen = () => {
+      setShowNotes(window.innerWidth >= 768);
+    };
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
+  React.useEffect(() => {
+    document.body.style.overflow = window.innerWidth >= 768 ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
     <>
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <Notes />
-      </div>
+      {showNotes && (
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          <Notes />
+        </div>
+      )}
       {children}
     </>
   );

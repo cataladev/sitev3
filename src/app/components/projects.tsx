@@ -65,15 +65,21 @@ export default function ProjectsPage() {
   return (
     <main className="min-h-screen overflow-y-auto overflow-x-hidden text-purple-400 pb-8">
       <h2 id="projects" className="text-3xl font-bold mb-6 text-center lowercase">projects</h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-4">
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-2 sm:px-4">
         {projects.map((proj) => (
-          <li key={proj.id} className="flex flex-col h-auto sm:h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 mb-4">
+          <li key={proj.id} className="flex flex-col h-auto sm:h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 mb-4 bg-black bg-opacity-90 animate-fade-in">
             <Link href={proj.url} target="_blank" className="block w-full h-full">
-              <div className="flex flex-row h-full">
-                <div className="p-3 w-1/3 relative">
-                  <Image src={proj.imgSrc} alt={proj.name} fill className="object-contain" sizes="(max-width: 768px) 33vw, 120px" />
+              <div className="flex flex-col sm:flex-row h-full">
+                <div className="pl-4 pr-3 pt-3 pb-3 sm:p-3 w-full h-32 sm:h-auto sm:w-1/3 relative flex-shrink-0">
+                  <Image 
+                    src={proj.imgSrc} 
+                    alt={proj.name} 
+                    fill 
+                    className="object-contain" 
+                    sizes="(max-width: 768px) 100vw, 33vw, 120px" 
+                  />
                 </div>
-                <div className="w-2/3 p-3 flex flex-col justify-between">
+                <div className="w-full sm:w-2/3 p-3 flex flex-col justify-between">
                   <div>
                     <div className="flex items-center justify-between">
                       <h3 className="text-xl font-bold text-white lowercase">{proj.name}</h3>
@@ -93,7 +99,7 @@ export default function ProjectsPage() {
                   {proj.tags && (
                     <ul className="mt-2 flex flex-wrap gap-1">
                       {proj.tags.map((tag) => (
-                        <li key={tag} className="bg-gray-700 text-white text-xs px-2 py-0.5 rounded lowercase">{tag}</li>
+                        <li key={tag} className="bg-gray-800 text-purple-300 text-xs px-2 py-0.5 rounded lowercase">{tag}</li>
                       ))}
                     </ul>
                   )}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Lightbulb } from "lucide-react";
 
 interface FunFact {
@@ -35,27 +35,37 @@ const FACTS: FunFact[] = [
 
 export default function FunFacts() {
   const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    // Auto-rotate through facts every 8 seconds
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % FACTS.length);
+    }, 8000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const { text, footnote } = FACTS[current];
 
-  const handleNext = () => {
-    setCurrent((i) => (i + 1) % FACTS.length);
-  };
-
   return (
-    <div className="mx-auto max-w-md m-4 p-6 border border-white rounded-lg">
-      <header className="flex items-center gap-2 mb-4">
-        <Lightbulb className="w-5 h-5 text-purple-500" />
-        <h3 className="text-lg font-semibold lowercase">fun fact</h3>
-      </header>
+    <div className="mx-auto max-w-full sm:max-w-lg p-3 sm:p-5 my-3 sm:my-5 bg-black bg-opacity-100 border border-white rounded-lg animate-fade-in">
+      <div className="relative flex flex-col items-center text-center">
+        <div className="text-base sm:text-lg text-gray-100 lowercase">
+          {text}
+          {footnote && <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-400 lowercase">({footnote})</span>}
+        </div>
 
-      <p className="text-white text-base mb-6 lowercase">
-        {text}
-        {footnote && <span className="ml-2 text-xs text-gray-400 lowercase">({footnote})</span>}
-      </p>
-
-      <button onClick={handleNext} className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition lowercase">
-        next fact
-      </button>
+        <div className="mt-4 flex justify-center space-x-1 sm:space-x-2">
+          {FACTS.map((_, i) => (
+            <button
+              key={i}
+              className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${i === current ? 'bg-purple-400' : 'bg-gray-600'}`}
+              onClick={() => setCurrent(i)}
+              aria-label={`View fact ${i+1}`}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

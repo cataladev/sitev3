@@ -34,7 +34,7 @@ export default function Top3() {
   }
 
   return (
-    <div className="mx-auto max-w-md m-4 p-6 border border-white rounded-lg bg-transparent">
+    <div className="mx-auto max-w-md m-4 p-6 border border-white bg-black bg-opacity-100 rounded-lg animate-fade-in">
       <div className="flex items-center gap-2 mb-4">
         <AlbumIcon className="w-5 h-5 text-purple-500" />
         <h3 className="text-lg font-semibold lowercase">top 3 albums</h3>
