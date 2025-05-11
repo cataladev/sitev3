@@ -33,6 +33,7 @@ export default function ListeningActivity() {
               setLastPlayedTime(`${Math.floor(minutes / 1440)}d`);
             }
           } catch (e) {
+            console.error('Error formatting last played time:', e);
             setLastPlayedTime(null);
           }
         } else {

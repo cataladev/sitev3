@@ -1,20 +1,25 @@
 import axios from 'axios'
-export type LastFmRecentTrack = {
-    name: string
-    artist: {
-      '#text': string
-      name?: string
-    }
-    image: Array<{
-      '#text': string
-      size: string
-    }>
-    '@attr'?: {
-      nowplaying: 'true'
-    }
-  }
 
-export async function getCurrentTrack() {
+export interface LastFmRecentTrack {
+  name: string;
+  artist: {
+    '#text': string;
+    name?: string;
+  };
+  image: Array<{
+    '#text': string;
+    size: string;
+  }>;
+  '@attr'?: {
+    nowplaying: 'true';
+  };
+  date?: {
+    uts: string;
+    '#text'?: string;
+  };
+}
+
+export async function getCurrentTrack(): Promise<LastFmRecentTrack | null> {
   try {
     const apiKey = process.env.NEXT_PUBLIC_LASTFM_API_KEY
     const username = process.env.NEXT_PUBLIC_LASTFM_USERNAME
@@ -42,12 +47,12 @@ export async function getCurrentTrack() {
   }
 }
 
-export type LastFmTopAlbum = {
-  name: string
-  playcount: string
-  artist: { name: string }
-  image: Array<{ '#text': string; size: string }>
-  '@attr'?: { rank: string }
+export interface LastFmTopAlbum {
+  name: string;
+  playcount: string;
+  artist: { name: string };
+  image: Array<{ '#text': string; size: string }>;
+  '@attr'?: { rank: string };
 }
 
 export async function getTopAlbums(limit = 3): Promise<LastFmTopAlbum[]> {

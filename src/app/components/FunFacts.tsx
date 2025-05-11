@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Lightbulb } from "lucide-react";
 
 interface FunFact {
   text: string;

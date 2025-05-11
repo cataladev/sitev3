@@ -64,7 +64,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen overflow-y-auto overflow-x-hidden text-purple-400 pb-8">
-      <h2 id="projects" className="text-3xl font-bold mb-6 text-center lowercase">projects</h2>
+      <h2 id="projects" className="text-3xl font-bold mb-6 text-center lowercase animate-fade-in">projects</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-2 sm:px-4">
         {projects.map((proj) => (
           <li key={proj.id} className="flex flex-col h-auto sm:h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 mb-4 bg-black bg-opacity-90 animate-fade-in">
