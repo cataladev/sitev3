@@ -7,10 +7,27 @@ interface Repo {
   name: string;
 }
 
+interface Commit {
+  sha: string;
+  commit: {
+    author: {
+      name: string;
+      date: string;
+    };
+    message: string;
+  };
+}
+
 interface Metrics {
   totalRepos: number;
   totalCommits: number;
   commitStreak: number;
+}
+
+interface EventItem {
+  type: string;
+  created_at: string;
+  payload: { commits?: { sha: string }[] };
 }
 
 function parseLinkHeader(header: string | null): Record<string, string> {
@@ -62,7 +79,7 @@ export default function GitHubMetrics({ username }: { username: string }) {
             const linkHeader = commitsRes.headers.get("link");
             if (linkHeader) {
               const links = parseLinkHeader(linkHeader);
-              // The “last” link’s URL contains ?page=<n>; that <n> is the total commit count
+              // The "last" link's URL contains ?page=<n>; that <n> is the total commit count
               const lastUrl = links["last"];
               if (lastUrl) {
                 const urlObj = new URL(lastUrl);
@@ -71,7 +88,7 @@ export default function GitHubMetrics({ username }: { username: string }) {
               }
             }
             // If no Link header: either 0 commits or exactly 1 commit
-            const commitsArray = (await commitsRes.json()) as any[];
+            const commitsArray = (await commitsRes.json()) as Commit[];
             return commitsArray.length;
           })
         );
@@ -83,11 +100,6 @@ export default function GitHubMetrics({ username }: { username: string }) {
           `https://api.github.com/users/${username}/events/public?per_page=100`
         );
         if (!eventsRes.ok) throw new Error("failed to fetch events");
-        type EventItem = {
-          type: string;
-          created_at: string;
-          payload: { commits?: { sha: string }[] };
-        };
         const events: EventItem[] = await eventsRes.json();
         const pushEvents = events.filter((e) => e.type === "PushEvent");
         const dateSet = new Set(pushEvents.map((e) => e.created_at.slice(0, 10)));
