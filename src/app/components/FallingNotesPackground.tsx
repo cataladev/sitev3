@@ -59,13 +59,6 @@ export default function FallingNotesBackground({ children }: { children: ReactNo
     return () => window.removeEventListener('resize', checkScreen);
   }, []);
 
-  React.useEffect(() => {
-    document.body.style.overflow = window.innerWidth >= 768 ? 'hidden' : 'auto';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
   return (
     <>
       {showNotes && (
@@ -73,7 +66,9 @@ export default function FallingNotesBackground({ children }: { children: ReactNo
           <Notes />
         </div>
       )}
-      {children}
+      <div className="min-h-screen overflow-auto">
+        {children}
+      </div>
     </>
   );
 }
