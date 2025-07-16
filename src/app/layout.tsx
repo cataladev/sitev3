@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Carlos Catala",
-  description: "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+  description: "Carlos Catala is an undergraduate software developer with expertise in web development.",
   keywords:[
         "Carlos Catala",
         "Software Engineer",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       type: "website",
       title: "Carlos Catala",
       description:
-      "Carlos Catala is a undergraduate student at the University of Central Florida and an aspiring software engineer.",
+      "Carlos Catala is an undergraduate software developer with expertise in web development.",
       url: "https://catala.dev",
       images: [{ url: "https://catala.dev/glorp.png" }],
       },
