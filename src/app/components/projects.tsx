@@ -6,7 +6,16 @@ import { FaMedal } from 'react-icons/fa6'
 
 const projects = [
   {
-    id: 1,
+    id: 7,
+    name: 'pheratech',
+    desc: 'company website for pheratech, a startup technology company.',
+    imgSrc: '/images/pheratech.svg',
+    url: 'https://pheratech.com',
+    variant: 'normal',
+    tags: ['react', 'tailwind'],
+  },
+  {
+    id: 6,
     name: 'kmodo',
     desc: 'full-stack hackathon management tool built with next.js, tailwind, trpc, and prisma.',
     imgSrc: '/images/kmodo.png',
@@ -15,7 +24,7 @@ const projects = [
     tags: ['next.js', 'prisma', 'trpc'],
   },
   {
-    id: 2,
+    id: 5,
     name: 'riffs',
     desc: 'web app converting hummed melodies into editable guitar tabs.',
     imgSrc: '/images/riffsicon.png',
@@ -24,7 +33,7 @@ const projects = [
     tags: ['pitch detection', 'midi'],
   },
   {
-    id: 3,
+    id: 4,
     name: 'sightsync',
     desc: 'assistive desktop tool using real-time eye-tracking and voice commands.',
     imgSrc: '/images/SightSync.png',
@@ -33,7 +42,7 @@ const projects = [
     tags: ['opencv', 'mediapipe'],
   },
   {
-    id: 4,
+    id: 3,
     name: 'spark-a-hack',
     desc: 'uses ai to suggest tailored project ideas to hackathon participants based on their interests, skills, and challenges they want to tackle.',
     imgSrc: '/images/spark-a-hack.png',
@@ -42,7 +51,7 @@ const projects = [
     tags: ['react', 'tailwind'],
   },
   {
-    id: 5,
+    id: 2,
     name: 'hack tracker',
     imgSrc: '/images/hack-tracker.png',
     desc: 'a simplified, customized experience to assist users in finding hackathons that match their requirements and passions.',
@@ -51,7 +60,7 @@ const projects = [
     tags: ['react', 'tailwind'],
   },
   {
-    id: 6,
+    id: 1,
     name: 'night of knights',
     imgSrc: '/images/night-of-knights.png',
     desc: 'night of knights was my first ever large-scale project, it was done as a capstone project senior year of high school.',
@@ -66,7 +75,9 @@ export default function ProjectsPage() {
     <main className="min-h-screen overflow-y-auto overflow-x-hidden text-purple-400 pb-8">
       <h2 id="projects" className="text-3xl font-bold mb-6 text-center lowercase animate-fade-in">projects</h2>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto px-2 sm:px-4">
-        {projects.map((proj) => (
+        {projects
+          .sort((a, b) => b.id - a.id)
+          .map((proj) => (
           <li key={proj.id} className="flex flex-col h-auto sm:h-56 rounded-lg hover:shadow-lg transition-shadow overflow-hidden border-2 border-purple-400 mb-4 bg-black bg-opacity-90 animate-fade-in">
             <Link href={proj.url} target="_blank" className="block w-full h-full">
               <div className="flex flex-col sm:flex-row h-full">
