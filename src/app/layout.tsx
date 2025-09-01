@@ -33,15 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Carlos Catala" }],
   creator: "Carlos Catala",
   publisher: "Carlos Catala",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://catala.dev'),
-  alternates: {
-    canonical: '/',
-  },
+  
   openGraph: {
     type: "website",
     locale: "en_US",
