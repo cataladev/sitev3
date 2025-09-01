@@ -6,25 +6,56 @@ import { Metadata } from 'next'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Carlos Catala",
-  description: "Carlos Catala is an undergraduate software developer with expertise in web development.",
-  keywords:[
-        "Carlos Catala",
-        "Software Engineer",
-        "UCF",
-        "University of Central Florida",
-        "Knight Hacks",
-        "Web Development",
-        "Full stack",
+  title: "Carlos Catala - Software Developer & Audio Engineer",
+  description: "Carlos Catala is a passionate software developer and audio engineer specializing in full-stack web development, real-time systems, and music technology integration. Currently working at UCF while building innovative web applications.",
+  keywords: [
+    "Carlos Catala",
+    "Software Developer",
+    "Audio Engineer",
+    "Full Stack Developer",
+    "Web Development",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "UCF",
+    "University of Central Florida",
+    "Knight Hacks",
+    "Music Technology",
+    "Real-time Systems",
+    "Linux",
+    "Audio APIs",
+    "Hackathon Projects",
+    "Open Source",
+    "Frontend Development",
+    "Backend Development"
+  ],
+  authors: [{ name: "Carlos Catala" }],
+  creator: "Carlos Catala",
+  publisher: "Carlos Catala",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://catala.dev'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://catala.dev",
+    title: "Carlos Catala - Software Developer & Audio Engineer",
+    description: "Carlos Catala is a passionate software developer and audio engineer specializing in full-stack web development, real-time systems, and music technology integration.",
+    siteName: "Carlos Catala Portfolio",
+    images: [
+      {
+        url: "carlosinnyc.jpg",
+        alt: "Carlos Catala",
+      }
     ],
-    openGraph: {
-      type: "website",
-      title: "Carlos Catala",
-      description:
-      "Carlos Catala is an undergraduate software developer with expertise in web development.",
-      url: "https://catala.dev",
-      images: [{ url: "https://catala.dev/glorp.png" }],
-      },
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

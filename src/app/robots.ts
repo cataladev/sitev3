@@ -5,8 +5,9 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: "/private/",
+            disallow: ["/private/", "/api/"],
         },
-        sitemap: "https://www.catala.dev/sitemap.xml",
+        sitemap: "https://catala.dev/sitemap.xml",
+        host: "https://catala.dev",
     };
 }

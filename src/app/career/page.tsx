@@ -1,5 +1,33 @@
 import { Briefcase } from "lucide-react";
 import AnimatedLink from "../components/AnimatedLink";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Career - Carlos Catala",
+  description: "Explore Carlos Catala's professional experience, internships, and career journey in software engineering, game development, and web technologies.",
+  keywords: [
+    "Carlos Catala",
+    "Career",
+    "Software Engineer",
+    "Internships",
+    "ZuLeris Interactive",
+    "UCF",
+    "Crowning Games",
+    "Miami EdTech",
+    "Avatar Buddy",
+    "Game Development",
+    "Web Development",
+    "React",
+    "Next.js",
+    "TypeScript"
+  ],
+  openGraph: {
+    title: "Career - Carlos Catala",
+    description: "Explore Carlos Catala's professional experience, internships, and career journey in software engineering.",
+    url: "https://catala.dev/career",
+    type: "website",
+  },
+};
 
 type Experience = {
   title: string;

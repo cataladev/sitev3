@@ -3,25 +3,28 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: "https://www.catala.dev",
+            url: "https://catala.dev",
             lastModified: new Date(),
+            changeFrequency: "monthly",
             priority: 1,
         },
         {
-            url: "https://www.catala.dev/career",
+            url: "https://catala.dev/career",
             lastModified: new Date(),
+            changeFrequency: "monthly",
             priority: 0.9,
         },
         {
-            url: "https://www.catala.dev/projects",
+            url: "https://catala.dev/projects",
             lastModified: new Date(),
+            changeFrequency: "weekly",
             priority: 0.9,
         },
         {
-            url: "https://www.catala.dev/about",
+            url: "https://catala.dev/about",
             lastModified: new Date(),
+            changeFrequency: "monthly",
             priority: 0.7,
         },
-
     ];
 }

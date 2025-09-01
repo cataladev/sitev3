@@ -1,13 +1,35 @@
 import AnimatedLink from "../components/AnimatedLink";
 import Tech from "../components/Tech";
 import FunFacts from "../components/FunFacts";
-import Metadata from "../components/Metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Carlos Catala",
+  description: "Carlos Catala is a software developer with expertise in web development and music technology integration. Learn about his background, skills, and passion for creating innovative applications.",
+  keywords: [
+    "Carlos Catala",
+    "About",
+    "Software Developer",
+    "Web Development",
+    "Music Technology",
+    "UCF",
+    "Audio Engineering",
+    "Full Stack Development",
+    "React",
+    "Next.js",
+    "TypeScript"
+  ],
+  openGraph: {
+    title: "About - Carlos Catala",
+    description: "Carlos Catala is a software developer with expertise in web development and music technology integration.",
+    url: "https://catala.dev/about",
+    type: "website",
+  },
+};
 
 export default function About() {
   return (
     <section className="max-w-screen-sm p-3 sm:p-4 mx-auto mb-4"> 
-      <Metadata title="about" description="carlos catala is a software developer with expertise in web development and music technology integration." />
-      
       <h1 className="text-2xl sm:text-3xl font-bold text-purple-500 pb-3 sm:pb-4 text-center lowercase animate-fade-in">about me</h1>
       
       <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in"> 

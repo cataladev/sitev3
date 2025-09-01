@@ -2,6 +2,33 @@ import FallingNotesBackground from "./components/FallingNotesPackground";
 import ListeningActivity from "./components/ListeningActivity";
 import SocialIcons from "./components/SocialIcons";
 import Top3 from "./components/Top3";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carlos Catala",
+  description: "Software audio engineer specializing in full-stack web development, real-time systems, and music technology integration.",
+  keywords: [
+    "Carlos Catala",
+    "Knight Hacks",
+    "University of Central Florida",
+    "Portfolio",
+    "Software Developer",
+    "Audio Engineer",
+    "Full Stack Developer",
+    "Web Development",
+    "Music Technology",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "UCF",
+  ],
+  openGraph: {
+    title: "Carlos Catala",
+    description: "Software and audio engineer specializing in full-stack web development, real-time systems, and music technology integration.",
+    url: "https://catala.dev",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
