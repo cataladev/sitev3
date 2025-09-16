@@ -16,17 +16,13 @@ export default function Home() {
           </h1>
           <SocialIcons />
         </div>
-
         <div className="max-w-[280px] mx-auto">
           <ListeningActivity />
         </div>
-
         <p className="mt-8 text-white text-sm font-light tracking-widest lowercase">
           here are my top 3 artists at the moment
         </p>
-
         <Top3 />
-
         <div className="pb-12" />
       </div>
     </FallingNotesBackground>
