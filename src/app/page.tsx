@@ -2,7 +2,6 @@ import FallingNotesBackground from "./components/FallingNotesPackground";
 import ListeningActivity from "./components/ListeningActivity";
 import SocialIcons from "./components/SocialIcons";
 import Top3 from "./components/Top3";
-import { Metadata } from "next";
 
 export default function Home() {
   return (
