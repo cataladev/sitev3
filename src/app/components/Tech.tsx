@@ -6,7 +6,8 @@ import {
   SiPython, SiJavascript, SiTypescript, SiC, SiCplusplus, SiSharp, SiHtml5, SiCss3,
   SiNextdotjs, SiNodedotjs, SiTailwindcss, SiTrpc, SiPrisma, SiOpencv,
   SiGit, SiPostgresql, SiDocker, SiVercel, SiSupabase, SiUnity, SiLinux,
-  SiDrizzle
+  SiDrizzle, SiElectron, SiFastapi, SiTensorflow, SiPhp, SiScikitlearn,
+  SiMediapipe
 } from 'react-icons/si'
 import { BsGithub } from 'react-icons/bs'
 import { Code, Database, Server, Globe } from 'lucide-react'
@@ -47,6 +48,7 @@ export default function Tech() {
         <IconWithTooltip label="C++"><SiCplusplus size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="C#"><SiSharp size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Java"><FaJava size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="PHP"><SiPhp size={20} className="text-purple-500" /></IconWithTooltip>
       </TechGroup>
 
       <TechGroup title="Frontend">
@@ -59,9 +61,13 @@ export default function Tech() {
 
       <TechGroup title="Backend">
         <IconWithTooltip label="Node.js"><SiNodedotjs size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="FastAPI"><SiFastapi size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="tRPC"><SiTrpc size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Prisma"><SiPrisma size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="OpenCV"><SiOpencv size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="MediaPipe"><SiMediapipe size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="TensorFlow"><SiTensorflow size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="scikit-learn"><SiScikitlearn size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Drizzle"><SiDrizzle size={20} className="text-purple-500" /></IconWithTooltip>
       </TechGroup>
 
@@ -73,6 +79,7 @@ export default function Tech() {
         <IconWithTooltip label="Vercel"><SiVercel size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Supabase"><SiSupabase size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Unity"><SiUnity size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="Electron"><SiElectron size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Linux"><SiLinux size={20} className="text-purple-500" /></IconWithTooltip>
       </TechGroup>
     </div>

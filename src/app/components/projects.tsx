@@ -6,12 +6,30 @@ import { FaMedal } from 'react-icons/fa6'
 
 const projects = [
   {
+    id: 9,
+    name: 'ctrl-arm',
+    desc: 'a muscle-controlled interface that translates bicep flexes and body movements into computer input using emg sensors and ai integration.',
+    imgSrc: '/images/ctrlarm.png',
+    url: 'https://devpost.com/software/ctrl-arm',
+    variant: 'shellhacks',
+    tags: ['python', 'c++', 'electron', 'scikit-learn', 'tensorflow'],
+  },
+  {
+    id: 8,
+    name: 'tapestry',
+    desc: 'a life-atlas tool powered by google adk that visualizes alternate life choices through interactive interviews and graph visualization.',
+    imgSrc: '/images/tapestry.png',
+    url: 'https://devpost.com/software/tapestry-s5u2oj',
+    variant: 'stemconnect',
+    tags: ['next.js', 'react', 'fastapi', 'google-adk', 'd3.js', 'nextauth.js'],
+  },
+  {
     id: 7,
     name: 'pheratech',
     desc: 'company website for pheratech, a startup technology company.',
     imgSrc: '/images/pheratech.svg',
     url: 'https://pheratech.com',
-    variant: 'normal',
+    variant: 'freelance',
     tags: ['react', 'tailwind'],
   },
   {
@@ -97,6 +115,21 @@ export default function ProjectsPage() {
                       {proj.variant === 'bitcamp' && (
                         <span className="flex items-center text-yellow-400 font-bold lowercase text-xs">
                           <FaMedal className="mr-1" title="bitcamp winner" />winner
+                        </span>
+                      )}
+                      {proj.variant === 'shellhacks' && (
+                        <span className="flex items-center text-pink-400 font-bold lowercase text-xs">
+                          <FaMedal className="mr-1" />winner
+                        </span>
+                      )}
+                      {proj.variant === 'freelance' && (
+                        <span className="flex items-center text-indigo-400 font-bold lowercase text-xs">
+                          <FaMedal className="mr-1" />freelance
+                        </span>
+                      )}
+                      {proj.variant === 'stemconnect' && (
+                        <span className="flex items-center text-blue-400 font-bold lowercase text-xs">
+                          <FaMedal className="mr-1" />winner
                         </span>
                       )}
                       {proj.variant === 'projectlaunch' && (

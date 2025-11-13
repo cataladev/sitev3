@@ -3,44 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { GitBranch, GitCommit, Calendar } from "lucide-react";
 
-interface Repo {
-  name: string;
-}
-
-interface Commit {
-  sha: string;
-  commit: {
-    author: {
-      name: string;
-      date: string;
-    };
-    message: string;
-  };
-}
-
 interface Metrics {
   totalRepos: number;
   totalCommits: number;
   commitStreak: number;
-}
-
-interface EventItem {
-  type: string;
-  created_at: string;
-  payload: { commits?: { sha: string }[] };
-}
-
-function parseLinkHeader(header: string | null): Record<string, string> {
-  if (!header) return {};
-  return header
-    .split(",")
-    .map((part) => part.trim().split(";"))
-    .reduce<Record<string, string>>((acc, [urlPart, relPart]) => {
-      const urlMatch = urlPart.trim().replace(/<(.*)>/, "$1");
-      const relMatch = relPart.trim().replace(/rel="(.*)"/, "$1");
-      acc[relMatch] = urlMatch;
-      return acc;
-    }, {});
 }
 
 export default function GitHubMetrics({ username }: { username: string }) {
@@ -51,67 +17,13 @@ export default function GitHubMetrics({ username }: { username: string }) {
   useEffect(() => {
     async function fetchMetrics() {
       try {
-        // 1) Fetch all repos (handle pagination)
-        const allRepos: Repo[] = [];
-        let page = 1;
-        while (true) {
-          const res = await fetch(
-            `https://api.github.com/users/${username}/repos?per_page=100&page=${page}`
-          );
-          if (!res.ok) throw new Error("failed to fetch repos");
-          const repos: Repo[] = await res.json();
-          allRepos.push(...repos);
-          const linkHeader = res.headers.get("link");
-          const links = parseLinkHeader(linkHeader);
-          if (!links["next"]) break;
-          page++;
+        const res = await fetch(`/api/github?username=${username}`);
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || "failed to fetch metrics");
         }
-
-        const totalRepos = allRepos.length;
-
-        // 2) For each repo, fetch commits authored by username (per_page=1) to read Link header
-        const commitCounts = await Promise.all(
-          allRepos.map(async (repo) => {
-            const commitsRes = await fetch(
-              `https://api.github.com/repos/${username}/${repo.name}/commits?author=${username}&per_page=1`
-            );
-            if (!commitsRes.ok) return 0;
-            const linkHeader = commitsRes.headers.get("link");
-            if (linkHeader) {
-              const links = parseLinkHeader(linkHeader);
-              // The "last" link's URL contains ?page=<n>; that <n> is the total commit count
-              const lastUrl = links["last"];
-              if (lastUrl) {
-                const urlObj = new URL(lastUrl);
-                const pageParam = urlObj.searchParams.get("page");
-                return pageParam ? parseInt(pageParam, 10) : 0;
-              }
-            }
-            // If no Link header: either 0 commits or exactly 1 commit
-            const commitsArray = (await commitsRes.json()) as Commit[];
-            return commitsArray.length;
-          })
-        );
-
-        const totalCommits = commitCounts.reduce((sum, c) => sum + c, 0);
-
-        // 3) Compute commit streak based on public events (last 100)
-        const eventsRes = await fetch(
-          `https://api.github.com/users/${username}/events/public?per_page=100`
-        );
-        if (!eventsRes.ok) throw new Error("failed to fetch events");
-        const events: EventItem[] = await eventsRes.json();
-        const pushEvents = events.filter((e) => e.type === "PushEvent");
-        const dateSet = new Set(pushEvents.map((e) => e.created_at.slice(0, 10)));
-
-        let streak = 0;
-        const today = new Date();
-        while (dateSet.has(today.toISOString().slice(0, 10))) {
-          streak++;
-          today.setDate(today.getDate() - 1);
-        }
-
-        setMetrics({ totalRepos, totalCommits, commitStreak: streak });
+        const data = await res.json();
+        setMetrics(data);
       } catch (e) {
         setError((e as Error).message);
       } finally {
