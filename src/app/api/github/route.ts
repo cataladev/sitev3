@@ -17,6 +17,14 @@ interface Commit {
   };
 }
 
+interface GitHubEvent {
+  type: string;
+  created_at: string;
+  payload?: {
+    commits?: { sha: string }[];
+  };
+}
+
 function parseLinkHeader(header: string | null): Record<string, string> {
   if (!header) return {};
   return header
@@ -215,7 +223,7 @@ export async function GET(request: Request) {
         // If search fails (e.g., rate limit or no access), fall back to counting commits in owned repos
         totalCommits = await countCommitsInRepos(allRepos, username, oneYearAgoISO, token || null);
       }
-    } catch (error) {
+    } catch {
       // Fall back to counting commits in owned repos
       totalCommits = await countCommitsInRepos(allRepos, username, oneYearAgoISO, token || null);
     }
@@ -225,9 +233,9 @@ export async function GET(request: Request) {
       `https://api.github.com/users/${username}/events/public?per_page=100`
     );
     if (!eventsRes.ok) throw new Error('Failed to fetch events');
-    const events = await eventsRes.json();
-    const pushEvents = events.filter((e: any) => e.type === 'PushEvent');
-    const dateSet = new Set(pushEvents.map((e: any) => e.created_at.slice(0, 10)));
+    const events = (await eventsRes.json()) as GitHubEvent[];
+    const pushEvents = events.filter((e) => e.type === 'PushEvent');
+    const dateSet = new Set(pushEvents.map((e) => e.created_at.slice(0, 10)));
 
     let streak = 0;
     const today = new Date();
