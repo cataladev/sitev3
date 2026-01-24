@@ -1,4 +1,3 @@
-import AnimatedLink from "../components/AnimatedLink";
 import Tech from "../components/Tech";
 import FunFacts from "../components/FunFacts";
 import { Metadata } from "next";

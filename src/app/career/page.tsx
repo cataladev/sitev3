@@ -2,7 +2,7 @@ import { Briefcase } from "lucide-react";
 import AnimatedLink from "../components/AnimatedLink";
 import { Metadata } from "next";
 
-export const revalidate = 60 * 60 * 24; // update durations daily
+export const revalidate = 86400; // update durations daily (must be a literal for Next page config)
 
 export const metadata: Metadata = {
   title: "Career - Carlos Catala",
