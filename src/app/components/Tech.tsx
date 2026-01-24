@@ -7,7 +7,7 @@ import {
   SiNextdotjs, SiNodedotjs, SiTailwindcss, SiTrpc, SiPrisma, SiOpencv,
   SiGit, SiPostgresql, SiDocker, SiVercel, SiSupabase, SiUnity, SiLinux,
   SiDrizzle, SiElectron, SiFastapi, SiTensorflow, SiPhp, SiScikitlearn,
-  SiMediapipe
+  SiMediapipe, SiRust
 } from 'react-icons/si'
 import { BsGithub } from 'react-icons/bs'
 import { Code, Database, Server, Globe } from 'lucide-react'
@@ -46,6 +46,7 @@ export default function Tech() {
         <IconWithTooltip label="TypeScript"><SiTypescript size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="C"><SiC size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="C++"><SiCplusplus size={20} className="text-purple-500" /></IconWithTooltip>
+        <IconWithTooltip label="Rust"><SiRust size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="C#"><SiSharp size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="Java"><FaJava size={20} className="text-purple-500" /></IconWithTooltip>
         <IconWithTooltip label="PHP"><SiPhp size={20} className="text-purple-500" /></IconWithTooltip>

@@ -29,7 +29,8 @@ const FACTS: FunFact[] = [
     footnote: "like, really",
   },
   {
-    text: "despite not playing much, pokemon is my favorite franchise, specifically pokémon white",
+    text: "i'm a huge fan of a lot of games, but my favorite is probably teamfight tactics",
+    footnote: "i might be addicted"
   },
 ];
 

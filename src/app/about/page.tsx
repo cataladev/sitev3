@@ -34,12 +34,11 @@ export default function About() {
       
       <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in"> 
         <p className="text-white text-sm sm:text-md lowercase">
-          i&apos;m a software developer specializing in modern web technologies and music applications. currently working for the{" "}
-          <AnimatedLink href="https://www.ucf.edu">university of central florida</AnimatedLink> while exploring innovative ways to blend audio engineering with web development. in my free time, i mess with linux configs, experiment with audio apis, and play video games.
+          i&apos;m a software developer who loves modern web technologies and building things that feel great to use. i&apos;m usually listening to music while i code, and when i&apos;m not, i&apos;m probably playing valorant or teamfight tactics.
         </p>
 
         <p className="text-white text-sm sm:text-md lowercase">
-          my technical focus spans full-stack web development, real-time systems, and audio processing. i&apos;m passionate about creating user experiences that bridge technical functionality with creative expression.
+          lately i&apos;ve been going out of my way to learn more rust and c++, and i&apos;ve really been enjoying systems-level work alongside my full-stack experience.
         </p>
 
         <p className="text-white text-sm sm:text-md lowercase">
