@@ -2,9 +2,19 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaMedal } from 'react-icons/fa6'
+import { FaCodeBranch, FaMedal } from 'react-icons/fa6'
 
 const projects = [
+  {
+    id: 10,
+    name: 'rico-32',
+    desc: 'a fantasy console inspired by pico-8, built with rust for performance and lua for scripting.',
+    imgSrc: '/images/rico-32.png',
+    url: 'https://github.com/RICO-32/RICO-32',
+    variant: 'normal',
+    openSource: true,
+    tags: ['rust', 'lua', 'game engine'],
+  },
   {
     id: 9,
     name: 'ctrl-arm',
@@ -110,33 +120,40 @@ export default function ProjectsPage() {
                 </div>
                 <div className="w-full sm:w-2/3 p-3 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-2">
                       <h3 className="text-xl font-bold text-white lowercase">{proj.name}</h3>
-                      {proj.variant === 'bitcamp' && (
-                        <span className="flex items-center text-yellow-400 font-bold lowercase text-xs">
-                          <FaMedal className="mr-1" title="bitcamp winner" />winner
-                        </span>
-                      )}
-                      {proj.variant === 'shellhacks' && (
-                        <span className="flex items-center text-pink-400 font-bold lowercase text-xs">
-                          <FaMedal className="mr-1" />winner
-                        </span>
-                      )}
-                      {proj.variant === 'freelance' && (
-                        <span className="flex items-center text-indigo-400 font-bold lowercase text-xs">
-                          <FaMedal className="mr-1" />freelance
-                        </span>
-                      )}
-                      {proj.variant === 'stemconnect' && (
-                        <span className="flex items-center text-blue-400 font-bold lowercase text-xs">
-                          <FaMedal className="mr-1" />winner
-                        </span>
-                      )}
-                      {proj.variant === 'projectlaunch' && (
-                        <span className="flex items-center text-green-400 font-bold lowercase text-xs">
-                          <FaMedal className="mr-1" />winner
-                        </span>
-                      )}
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {proj.openSource && (
+                          <span className="flex items-center text-emerald-400 font-bold lowercase text-xs">
+                            <FaCodeBranch className="mr-1" />open source
+                          </span>
+                        )}
+                        {proj.variant === 'bitcamp' && (
+                          <span className="flex items-center text-yellow-400 font-bold lowercase text-xs">
+                            <FaMedal className="mr-1" title="bitcamp winner" />winner
+                          </span>
+                        )}
+                        {proj.variant === 'shellhacks' && (
+                          <span className="flex items-center text-pink-400 font-bold lowercase text-xs">
+                            <FaMedal className="mr-1" />winner
+                          </span>
+                        )}
+                        {proj.variant === 'freelance' && (
+                          <span className="flex items-center text-indigo-400 font-bold lowercase text-xs">
+                            <FaMedal className="mr-1" />freelance
+                          </span>
+                        )}
+                        {proj.variant === 'stemconnect' && (
+                          <span className="flex items-center text-blue-400 font-bold lowercase text-xs">
+                            <FaMedal className="mr-1" />winner
+                          </span>
+                        )}
+                        {proj.variant === 'projectlaunch' && (
+                          <span className="flex items-center text-green-400 font-bold lowercase text-xs">
+                            <FaMedal className="mr-1" />winner
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <p className="mt-2 text-gray-300 text-xs sm:text-sm lowercase">{proj.desc}</p>
                   </div>
