@@ -18,10 +18,6 @@ const FACTS: FunFact[] = [
     footnote: "looking at you daniel",
   },
   {
-    text: "i chose ucf because of extracurriculars like knight hacks",
-    footnote: "i <3 kh and hackathons",
-  },
-  {
     text: "i've owned three dogs in my lifetime, but they're not my favorite pets, cats are",
   },
   {
@@ -31,6 +27,10 @@ const FACTS: FunFact[] = [
   {
     text: "i'm a huge fan of a lot of games, but my favorite is probably teamfight tactics",
     footnote: "i might be addicted"
+  },
+  {
+    text: "i love cozy fantasy shows like frieren that are character-driven",
+    footnote: "if i get hooked, i can binge for hours",
   },
 ];
 
