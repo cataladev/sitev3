@@ -20,7 +20,7 @@ export default function Home() {
           <ListeningActivity />
         </div>
         <p className="mt-8 text-white text-sm font-light tracking-widest lowercase">
-          here are my top 3 artists at the moment
+          here are my top 3 albums at the moment
         </p>
         <Top3 />
         <div className="pb-12" />
